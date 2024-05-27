@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-import general_functions as gf
+# import general_functions as gf
 from tqdm import tqdm
 
 # Create array which holds both excitations level and 
@@ -50,26 +50,25 @@ def excite_nbors(target_idx, cell_info, epsilon):
     # Find and potentially excite neighbours
     L = np.shape(cell_info)[0]    
     # Open boundary for horizontal direction
-    nbor_left_val = max(target_idx[0] - 1, 0)
-    nbor_left = (nbor_left_val, target_idx[1])
-    nbor_right_val = min(target_idx[0] + 1, L-1)
-    nbor_right = (nbor_right_val, target_idx[1])
-    # Periodic boundary for vertical direction
-    nbor_top_val = (target_idx[1] + L + 1) % L
-    nbor_top = (target_idx[0], nbor_top_val) 
-    nbor_bot_val = (target_idx[1] + L - 1) % L
-    nbor_bot = (target_idx[0], nbor_bot_val)
+    # nbor_left_val = max(target_idx[0] - 1, 0)
+    # nbor_left = (nbor_left_val, target_idx[1])
+    # nbor_right_val = min(target_idx[0] + 1, L-1)
+    # nbor_right = (nbor_right_val, target_idx[1])
+    # # Periodic boundary for vertical direction
+    # nbor_top_val = (target_idx[1] + L + 1) % L
+    # nbor_top = (target_idx[0], nbor_top_val) 
+    # nbor_bot_val = (target_idx[1] + L - 1) % L
+    # nbor_bot = (target_idx[0], nbor_bot_val)
     
-    #
-    nbor_left_val = max(target_idx[0] - 1, 0)
-    nbor_left = (nbor_left_val, target_idx[1])
-    nbor_right_val = min(target_idx[0] + 1, L-1)
-    nbor_right = (nbor_right_val, target_idx[1])
+    nbor_bot_val = max(target_idx[0] - 1, 0)
+    nbor_bot = (nbor_bot_val, target_idx[1])
+    nbor_top_val = min(target_idx[0] + 1, L-1)
+    nbor_top = (nbor_top_val, target_idx[1])
     # Periodic boundary for vertical direction
-    nbor_top_val = (target_idx[1] + L + 1) % L
-    nbor_top = (target_idx[0], nbor_top_val) 
-    nbor_bot_val = (target_idx[1] + L - 1) % L
-    nbor_bot = (target_idx[0], nbor_bot_val)
+    nbor_right_val = (target_idx[1] + L + 1) % L
+    nbor_right = (target_idx[0], nbor_right_val) 
+    nbor_left_val = (target_idx[1] + L - 1) % L
+    nbor_left = (target_idx[0], nbor_left_val)
 
 
 
@@ -190,5 +189,5 @@ def animate_state(L: int, nu: float, delta: float, epsilon: float, tmax: int) ->
     plt.show()
     
 
-# plot_initial_final(L=50, nu=1, delta=0, epsilon=0, tmax=200)
-animate_state(L=50, nu=1, delta=0, epsilon=0, tmax=100)
+plot_initial_final(L=50, nu=1, delta=0, epsilon=0, tmax=100)
+# animate_state(L=50, nu=1, delta=0, epsilon=0, tmax=100)
