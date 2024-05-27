@@ -1,0 +1,32 @@
+### -- TITLE AND LABEL --
+axes.titlesize: 15
+axes.titleweight: normal
+axes.labelsize : 10
+##font.labelstyle: italic
+
+### -- SPINES --
+axes.spines.top: False
+axes.spines.right: False
+
+### -- LINES  --
+axes.prop_cycle: cycler("color", ["rebeccapurple", "firebrick", "black", "darkorange", "seagreen", "deepskyblue"])
+
+### -- FIGURE AND AXES --
+axes.facecolor: e0e0e0
+figure.dpi: 150
+figure.constrained_layout.use: True
+
+### -- LEGEND --
+legend.shadow: True
+legend.fancybox: True
+
+### -- GRID --
+grid.color: white
+grid.linestyle: solid
+grid.alpha: 0.5
+
+
+
+## lines.linestyle: cycler["solid", "dotted", "dashed", "dashdot", (0, (3, 1, 1, 1)), (0, (3, 5, 1, 5, 1, 5))])
+## lines.marker: cycler([".", "x", "v", "1", "p", ">"])
+
